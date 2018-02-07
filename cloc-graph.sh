@@ -10,9 +10,9 @@ echo branch is $branch
 
 count=1
 for commit in $(git rev-list --reverse $branch); do
-	echo hullo $i $commit
-	git checkout -q $commit
-	cloc --quiet --csv $(git ls-files | grep -v gradle) > $outdir/hiyacloc-$count.csv
+	echo hullo, processing $i $commit
+	#git checkout -q $commit
+	cloc --quiet --csv $commit > $outdir/hiyacloc-$count.csv
 
 	count=$((count+1))
 done
