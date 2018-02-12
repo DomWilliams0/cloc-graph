@@ -54,4 +54,4 @@ with open('$plot', 'w') as f:
 		f.write(' "$out" using {} title "{}" with lines, '.format(i+1, lang))
 EOF
 
-gnuplot -persist $plot
+exec gnuplot -persist $plot
